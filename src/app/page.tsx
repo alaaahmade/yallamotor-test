@@ -63,6 +63,7 @@ const guides: Guide[] = [
 export const dynamic = "force-dynamic";
 
 export default async function Home() {
+  
   // SSR data fetching using API routes
   const [carsRes, brandsRes, faqsRes, videosRes, reviewsRes] = await Promise.all([
     fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/popular-cars`, { cache: 'no-store' }),

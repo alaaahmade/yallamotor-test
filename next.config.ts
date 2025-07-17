@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
   images: {
     domains: ["ymimg1.b8cdn.com", "yallamotor-production-assets.s3.ap-south-1.amazonaws.com", "upload.wikimedia.org"],
   },
+  env: {
+    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_BASE_URL,
+  },
 };
 
 export default nextConfig;
