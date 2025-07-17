@@ -1,5 +1,5 @@
 import React from 'react';
-import type { ReactNode, JSX } from 'react';
+import type { ReactNode } from 'react';
 
 interface GuideCardProps {
   guide: {
@@ -10,7 +10,6 @@ interface GuideCardProps {
 }
 
 const GuideCard = ({ guide }: GuideCardProps) => {
-  const Icon = typeof guide.icon === 'function' ? guide.icon : () => guide.icon;
   const iconNode = typeof guide.icon === 'function' ? guide.icon() : guide.icon;
   
   return (

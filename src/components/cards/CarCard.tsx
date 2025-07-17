@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Icon } from '@iconify/react';
+import { CarI } from '@/app/types/cars';
 
-export default function CarCard({ car }: { car: any }) {
+export default function CarCard({ car }: { car: CarI }) {
   return (
     <div
       className="w-full md:max-w-[206px] md:w-[206px] h-[257px] bg-white shadow-lg border-1 border-gray-200 text-sm inline-block overflow-hidden rounded-sm"

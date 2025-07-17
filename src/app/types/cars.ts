@@ -1,3 +1,5 @@
+import { JSX } from 'react';
+
 export interface CarI {
   brand: string;
   model: string;
@@ -7,15 +9,16 @@ export interface CarI {
   image: string;
   link: string;
   rating: number;
+  rank?: string;
 }
 export interface CarStructuredDataProps {
-  cars: Array<CarI>;
+  cars: CarI[];
 }
 
 export interface Guide {
   title: string;
   description: string;
-  icon: any;
+  icon: JSX.Element;
   link?: string;
   url?: string;
 }

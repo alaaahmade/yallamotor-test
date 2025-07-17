@@ -39,7 +39,7 @@ function AccordionItem({ question, answer, index }: { question: string; answer: 
 
 export default function FAQSection() {
   const dispatch = useAppDispatch();
-  const { faqs, loading, error, openIndex } = useAppSelector(state => state.faq);
+  const { faqs, loading, error } = useAppSelector(state => state.faq);
 
   useEffect(() => {
     dispatch(fetchFaqs());

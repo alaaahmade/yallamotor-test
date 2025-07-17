@@ -1,7 +1,10 @@
 import Image from 'next/image'
 import React from 'react'
 
-const BrandCard = ({brand}: {brand: any }) => {
+const BrandCard = ({brand}: {brand: {
+  brand: string;
+  image: string;
+} }) => {
   return (
     <div  className="flex flex-col w-36 items-center p-4 hover:bg-gray-50 rounded-sm cursor-pointer shadow-md hover:shadow-md transition-shadow duration-200 border-1 border-gray-200">
     <div className="w-20 h-15 relative">

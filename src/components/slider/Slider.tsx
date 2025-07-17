@@ -1,7 +1,18 @@
 import React from 'react'
 import CarCard from '../cards/CarCard'
-import { CarI } from '@/app/types/cars';
 import groupCarsForMobile from '../groupCarsForMobile';
+
+export interface CarI {
+  brand: string;
+  model: string;
+  year: string;
+  rank?: string;
+  link: string;
+  image: string;
+  title: string;
+  price: string;
+  rating: number;
+}
 
 interface SlideProps {
   handlePrev: () => void;
@@ -30,11 +41,11 @@ const Slider = ({handlePrev, handleNext, currentSlide, totalSlides, slidesPerGro
             <div className="flex transition-transform duration-500 ease-in-out w-full md:hidden"
               style={{ transform: `translateX(-${currentSlide * 66.6667}%)` }}
             >
-              {mobileGroups.map((group: any[], idx: number) => (
+              {mobileGroups.map((group: CarI[], idx: number) => (
                 <div key={idx} className="flex-shrink-0 w-2/3 px-1">
                   <div className="flex flex-col gap-2 h-full">
-                    {group.map((car: any) => (
-                      <CarCard car={car} key={car.title} />
+                    {group.map((car: CarI) => (
+                      <CarCard key={car.title} car={car}/>
                     ))}
                   </div>
                 </div>
@@ -51,8 +62,8 @@ const Slider = ({handlePrev, handleNext, currentSlide, totalSlides, slidesPerGro
                     {PopularCarsDATA
                       .slice(groupIndex * slidesPerGroup, (groupIndex + 1) * slidesPerGroup)
                       .map((car, i) => (
-                        <div className="flex flex-col gap-4">
-                          <CarCard car={car} key={car.title} />
+                        <div key={car.title} className="flex flex-col gap-4">
+                          <CarCard car={car}/>
                           {PopularCarsDATA[groupIndex * slidesPerGroup + i + 4] && (
                             <CarCard car={PopularCarsDATA[groupIndex * slidesPerGroup + i + 4]} key={PopularCarsDATA[groupIndex * slidesPerGroup + i + 4].title} />
                           )}
