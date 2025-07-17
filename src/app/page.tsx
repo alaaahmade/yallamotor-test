@@ -65,11 +65,11 @@ export const dynamic = "force-dynamic";
 export default async function Home() {
   // SSR data fetching using API routes
   const [carsRes, brandsRes, faqsRes, videosRes, reviewsRes] = await Promise.all([
-    fetch('http://localhost:3000/api/popular-cars', { cache: 'no-store' }),
-    fetch('http://localhost:3000/api/brands', { cache: 'no-store' }),
-    fetch('http://localhost:3000/api/faqs', { cache: 'no-store' }),
-    fetch('http://localhost:3000/api/videos', { cache: 'no-store' }),
-    fetch('http://localhost:3000/api/car-reviews', { cache: 'no-store' }),
+    fetch('https://yallamotor-test-dp165u5pm-alaaahmadfreelance-2933s-projects.vercel.app/api/popular-cars', { cache: 'no-store' }),
+    fetch('https://yallamotor-test-dp165u5pm-alaaahmadfreelance-2933s-projects.vercel.app/api/brands', { cache: 'no-store' }),
+    fetch('https://yallamotor-test-dp165u5pm-alaaahmadfreelance-2933s-projects.vercel.app/api/faqs', { cache: 'no-store' }),
+    fetch('https://yallamotor-test-dp165u5pm-alaaahmadfreelance-2933s-projects.vercel.app/api/videos', { cache: 'no-store' }),
+    fetch('https://yallamotor-test-dp165u5pm-alaaahmadfreelance-2933s-projects.vercel.app/api/car-reviews', { cache: 'no-store' }),
   ]);
   const [cars, brands, faqs, videos, reviews] = await Promise.all([
     carsRes.json(),

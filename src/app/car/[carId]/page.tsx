@@ -5,11 +5,8 @@ import type { Metadata } from "next"
 
 async function getCar(carId: string): Promise<CarI | null> {
   try {
-    
-    const res = await fetch(`http://localhost:3000/api/cars/${carId}`, {
-      cache: 'no-store',
-    });
-    
+    const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'https://yallamotor-test-dp165u5pm-alaaahmadfreelance-2933s-projects.vercel.app';
+    const res = await fetch(`${baseUrl}/api/cars/${carId}`, { cache: 'no-store' });
     if (!res.ok) return null;
     const data = await res.json();
     return {
