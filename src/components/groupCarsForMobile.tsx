@@ -1,4 +1,4 @@
-import { CarI } from '@/app/types/cars';
+import { CarI } from '@/types/cars';
 
 const groupCarsForMobile = (cars: CarI[]): CarI[][] => {
   const groups: CarI[][] = [];

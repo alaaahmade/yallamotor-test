@@ -1,6 +1,6 @@
 import Script from 'next/script';
 import type { JSX } from 'react';
-import { BrandsI } from '@/app/types/cars';
+import { BrandsI } from '@/types/cars';
 
 // Brand Structured Data
 export function BrandStructuredData({ brands }: { brands: BrandsI[] }) {

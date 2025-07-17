@@ -1,4 +1,4 @@
-import { CarStructuredDataProps } from '@/app/types/cars';
+import { CarStructuredDataProps } from '@/types/cars';
 import Script from 'next/script';
 
 

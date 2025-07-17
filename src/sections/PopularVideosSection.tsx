@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import PopularVideosSkeleton from '@/components/skeletons/PopularVideosSkeleton';
-import { VideosI } from '@/app/types/cars';
+import { VideosI } from '@/types/cars';
 
 
 interface PopularVideosSectionProps {

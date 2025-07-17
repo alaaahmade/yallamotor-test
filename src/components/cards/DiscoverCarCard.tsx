@@ -1,4 +1,4 @@
-import { ReviewsI } from '@/app/types/cars'
+import { ReviewsI } from '@/types/cars'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -6,7 +6,7 @@ import React from 'react'
 const DiscoverCarCard = ({review}: {review: ReviewsI}) => {
   return (
     <Link
-    href={review.link}
+    href={`/car/${review.id}`}
     className="group block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow"
   >
     <div className="relative h-48">

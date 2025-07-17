@@ -1,6 +1,7 @@
 import { JSX } from 'react';
 
 export interface CarI {
+  id: number;
   brand: string;
   model: string;
   year: string;
@@ -10,6 +11,14 @@ export interface CarI {
   link: string;
   rating: number;
   rank?: string;
+  author: string;
+  readTime: string;
+  date: string;
+  sections?: {
+    title: string,
+    content: string
+  }[],
+  
 }
 export interface CarStructuredDataProps {
   cars: CarI[];
@@ -49,6 +58,7 @@ export interface VideosI {
 }
 
 export interface ReviewsI {
+  id: string;
   link: string;
   image: string;
   title: string;

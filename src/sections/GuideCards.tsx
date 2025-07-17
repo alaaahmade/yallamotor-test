@@ -1,4 +1,4 @@
-import { Guide } from '@/app/types/cars';
+import { Guide } from '@/types/cars';
 import GuideCard from '@/components/cards/GuideCard';
 import { GuideStructuredData } from '@/components/StructuredData';
 
@@ -16,11 +16,15 @@ export default function GuideCards({ guides }: GuideCardsProps) {
           Explore our comprehensive guides to help you make informed decisions about your car.
         </p>
         <GuideStructuredData guides={guides} />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {guides.map((guide, i) => (
-            <GuideCard guide={guide} key={i} />
-          ))}
-        </div>
+        {guides.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {guides.map((guide) => (
+              <GuideCard guide={guide} key={guide.title} />
+            ))}
+          </div>
+        ) : (
+          <p className="text-center py-6 text-gray-500">No guides available.</p>
+        )}
       </div>
     </section>
   );

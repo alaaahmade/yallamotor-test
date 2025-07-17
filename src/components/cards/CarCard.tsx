@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Icon } from '@iconify/react';
-import { CarI } from '@/app/types/cars';
+import { CarI } from '@/types/cars';
 
 export default function CarCard({ car }: { car: CarI }) {
   return (
@@ -13,7 +13,7 @@ export default function CarCard({ car }: { car: CarI }) {
       data-item-rank={car.rank || ""}
       data-item-type="Car Card"
     >
-      <Link href={car.link} className="block w-full h-[150px]">
+      <Link href={`/car/${car.id}`} className="block w-full h-[150px]">
         <Image
           src={car.image}
           alt={car.title}
@@ -26,7 +26,7 @@ export default function CarCard({ car }: { car: CarI }) {
       <div className="px-3 pt-2 pb-3 flex flex-col justify-between h-[107px]">
         {/* Title */}
         <div className="h-[34px] overflow-hidden leading-tight font-bold">
-          <Link href={car.link} className="text-black hover:underline block text-sm">
+          <Link href={`/car/${car.id}`} className="text-black hover:underline block text-sm">
             {car.title}
           </Link>
         </div>

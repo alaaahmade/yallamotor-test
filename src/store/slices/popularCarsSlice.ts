@@ -1,4 +1,4 @@
-import { CarI } from '@/app/types/cars';
+import { CarI } from '@/types/cars';
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 
 

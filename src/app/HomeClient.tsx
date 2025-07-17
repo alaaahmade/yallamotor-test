@@ -11,7 +11,7 @@ import PopularVideosSection from '@/sections/PopularVideosSection';
 import FAQSection from "../sections/FAQ";
 import HeroBanner from "../sections/HeroBanner";
 import SEO from '@/components/SEO';
-import { BrandsI, CarI, FaqsI, Guide, ReviewsI, VideosI } from './types/cars';
+import { BrandsI, CarI, FaqsI, Guide, ReviewsI, VideosI } from '../types/cars';
 
 
 export default function HomeClient({ cars, brands, faqs, videos, reviews, guides } : { cars: CarI[], brands: BrandsI[], faqs: FaqsI[], videos: VideosI[], reviews: ReviewsI[], guides: Guide[] }) {

@@ -1,18 +1,7 @@
 import React from 'react'
 import CarCard from '../cards/CarCard'
 import groupCarsForMobile from '../groupCarsForMobile';
-
-export interface CarI {
-  brand: string;
-  model: string;
-  year: string;
-  rank?: string;
-  link: string;
-  image: string;
-  title: string;
-  price: string;
-  rating: number;
-}
+import { CarI } from '@/types/cars';
 
 interface SlideProps {
   handlePrev: () => void;

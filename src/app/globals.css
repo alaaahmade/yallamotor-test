@@ -14,7 +14,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #000;
     --foreground: #ededed;
   }
 }
@@ -27,5 +27,4 @@ body {
 
 * {
   box-sizing: border-box;
-
 }

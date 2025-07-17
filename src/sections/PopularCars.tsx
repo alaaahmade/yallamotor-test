@@ -2,7 +2,7 @@ import React from 'react';
 import CarStructuredData from '@/components/CarStructuredData';
 import Slider from '@/components/slider/Slider';
 import PopularCarsSkeleton from '../components/skeletons/PopularCarsSkeleton';
-import { CarI } from '@/app/types/cars';
+import { CarI } from '@/types/cars';
 
 interface PopularCarsProps {
   cars: CarI[];
@@ -31,10 +31,14 @@ export default function PopularCars({ cars, loading, error, currentSlide, handle
           <div className="text-center py-6 text-red-500">{error}</div>
         )}
         {!loading && !error && (
-          <>
-            <CarStructuredData cars={cars} />
-            <Slider handlePrev={handlePrev} handleNext={handleNext} currentSlide={currentSlide} totalSlides={totalSlides} slidesPerGroup={slidesPerGroup} PopularCarsDATA={cars}/>
-          </>
+          cars.length > 0 ? (
+            <>
+              <CarStructuredData cars={cars} />
+              <Slider handlePrev={handlePrev} handleNext={handleNext} currentSlide={currentSlide} totalSlides={totalSlides} slidesPerGroup={slidesPerGroup} PopularCarsDATA={cars}/>
+            </>
+          ) : (
+            <p className="text-center py-6 text-gray-500">No popular cars available.</p>
+          )
         )}
       </div>
     </section>

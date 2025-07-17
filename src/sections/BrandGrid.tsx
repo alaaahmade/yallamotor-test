@@ -3,7 +3,7 @@ import SearchBar from '@/components/SearchBar';
 import { BrandStructuredData } from '@/components/StructuredData';
 import React from 'react';
 import BrandGridSkeleton from '../components/skeletons/BrandGridSkeleton';
-import { BrandsI } from '@/app/types/cars';
+import { BrandsI } from '@/types/cars';
 
 interface BrandGridProps {
   brands: BrandsI[];
@@ -32,13 +32,17 @@ export default function BrandGrid({ brands, loading, error, showAll, onToggleSho
         {!loading && !error && (
           <>
             <BrandStructuredData brands={brands} />
-            <div className="flex flex-wrap gap-6 justify-center mb-12">
-              {showAll ? brands.map((brand, i) => (
-                <BrandCard brand={brand} key={i} />
-              )) : brands.slice(0, 12).map((brand, i) => (
-                <BrandCard brand={brand} key={i} />
-              ))}
-            </div>
+            {brands.length > 0 ? (
+              <div className="flex flex-wrap gap-6 justify-center mb-12">
+                {showAll ? brands.map((brand) => (
+                  <BrandCard brand={brand} key={brand.id} />
+                )) : brands.slice(0, 12).map((brand) => (
+                  <BrandCard brand={brand} key={brand.id} />
+                ))}
+              </div>
+            ) : (
+              <p className="text-center py-6 text-gray-500">No brands available.</p>
+            )}
             <div className="flex justify-center mt-0 ">
               <button
                 onClick={onToggleShowAll}

@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import type { CarI } from '@/app/types/cars';
+import type { CarI } from '@/types/cars';
 
 export interface CarReviewsState {
   reviews: CarI[];

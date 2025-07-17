@@ -1,6 +1,6 @@
 import HomeClient from './HomeClient';
 
-import { Guide } from '@/app/types/cars';
+import { Guide } from '@/types/cars';
 
 const guides: Guide[] = [
   {

@@ -41,7 +41,7 @@ function AccordionItem({ question, answer, index, openIndex, onToggleOpenIndex }
 }
 
 interface FAQSectionProps {
-  faqs: { q: string; a: string }[];
+  faqs: { id: number, q: string; a: string }[];
   loading: boolean;
   error: string | null;
   openIndex: number;
@@ -74,11 +74,15 @@ export default function FAQSection({ faqs, loading, error, openIndex, onToggleOp
           <div className="text-center py-6 text-red-500">{error}</div>
         )}
         {!loading && !error && (
-          <div className="space-y-4">
-            {faqs.map((faq, i) => (
-              <AccordionItem key={i} question={faq.q} answer={faq.a} index={i} openIndex={openIndex} onToggleOpenIndex={onToggleOpenIndex} />
-            ))}
-          </div>
+          faqs.length > 0 ? (
+            <div className="space-y-4">
+              {faqs.map((faq, i) => (
+                <AccordionItem key={faq.id} question={faq.q} answer={faq.a} index={i} openIndex={openIndex} onToggleOpenIndex={onToggleOpenIndex} />
+              ))}
+            </div>
+          ) : (
+            <p className="text-center py-6 text-gray-500">No FAQs available.</p>
+          )
         )}
       </div>
     </section>
