@@ -66,11 +66,11 @@ export default async function Home() {
   
   // SSR data fetching using API routes
   const [carsRes, brandsRes, faqsRes, videosRes, reviewsRes] = await Promise.all([
-    fetch(`http://localhost:3000/api/popular-cars`, { cache: 'no-store' }),
-    fetch(`http://localhost:3000/api/brands`, { cache: 'no-store' }),
-    fetch(`http://localhost:3000/api/faqs`, { cache: 'no-store' }),
-    fetch(`http://localhost:3000/api/videos`, { cache: 'no-store' }),
-    fetch(`http://localhost:3000/api/car-reviews`, { cache: 'no-store' }),
+    fetch(`/api/popular-cars`, { cache: 'no-store' }),
+    fetch(`/api/brands`, { cache: 'no-store' }),
+    fetch(`/api/faqs`, { cache: 'no-store' }),
+    fetch(`/api/videos`, { cache: 'no-store' }),
+    fetch(`/api/car-reviews`, { cache: 'no-store' }),
   ]);
   const [cars, brands, faqs, videos, reviews] = await Promise.all([
     carsRes.json(),

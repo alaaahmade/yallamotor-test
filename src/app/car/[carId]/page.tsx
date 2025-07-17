@@ -5,7 +5,7 @@ import type { Metadata } from "next"
 
 async function getCar(carId: string): Promise<CarI | null> {
   try {
-    const res = await fetch(`http://localhost:3000/api/cars/${carId}`, { cache: 'no-store' });
+    const res = await fetch(`/api/cars/${carId}`, { cache: 'no-store' });
     if (!res.ok) return null;
     const data = await res.json();
     return {
