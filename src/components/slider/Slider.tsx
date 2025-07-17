@@ -57,8 +57,8 @@ const Slider = ({handlePrev, handleNext, currentSlide, totalSlides, slidesPerGro
               style={{ transform: `translateX(-${currentSlide * 50}%)` }}
             >
               {[...Array(totalSlides)].map((_, groupIndex) => (
-                <div key={groupIndex} className="flex-shrink-0 w-[80%]">
-                  <div className="grid grid-cols-5 md:grid-cols-4 lg:grid-cols-5 gap-">
+                <div key={groupIndex} className="flex-shrink-0 w-[100%]">
+                  <div className="grid grid-cols-5 md:grid-cols-5 lg:grid-cols-5 gap-0">
                     {PopularCarsDATA
                       .slice(groupIndex * slidesPerGroup, (groupIndex + 1) * slidesPerGroup)
                       .map((car, i) => (
