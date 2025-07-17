@@ -1,8 +1,11 @@
+import { ReviewsI } from '@/app/types/cars';
 import DiscoverCarCard from '@/components/cards/DiscoverCarCard';
-import { reviewsCars } from '@/mock/cars';
 
+interface CarReviewsProps {
+  reviews: ReviewsI[];
+}
 
-export default function CarReviews() {
+export default function CarReviews({ reviews }: CarReviewsProps) {
   
 
   return (
@@ -13,7 +16,7 @@ export default function CarReviews() {
           <button className="self-start md:self-auto text-blue-500 border border-blue-500 hover:text-blue-600 hover:border-blue-600 font-bold py-1 px-4 rounded">View All</button>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1">
-          {reviewsCars.map((review, index) => (
+          {reviews.map((review, index) => (
             <DiscoverCarCard key={index} review={review}/>
           ))}
         </div>

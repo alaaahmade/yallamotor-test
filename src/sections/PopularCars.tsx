@@ -1,29 +1,21 @@
-'use client'
-import React, { useEffect } from 'react';
-import { useAppSelector, useAppDispatch } from '../store/hooks';
-import { nextSlide, prevSlide, fetchPopularCars } from '../store/slices/popularCarsSlice';
+import React from 'react';
 import CarStructuredData from '@/components/CarStructuredData';
 import Slider from '@/components/slider/Slider';
 import PopularCarsSkeleton from '../components/skeletons/PopularCarsSkeleton';
+import { CarI } from '@/app/types/cars';
 
-export default function PopularCars() {
-  const dispatch = useAppDispatch();
-  const { cars, loading, error, currentSlide } = useAppSelector(state => state.popularCars);
+interface PopularCarsProps {
+  cars: CarI[];
+  loading: boolean;
+  error: string | null;
+  currentSlide: number;
+  handlePrev: () => void;
+  handleNext: () => void;
+}
+
+export default function PopularCars({ cars, loading, error, currentSlide, handlePrev, handleNext }: PopularCarsProps) {
   const slidesPerGroup = 5;
   const totalSlides = Math.ceil(cars.length / slidesPerGroup);
-
-  useEffect(() => {
-    dispatch(fetchPopularCars());
-  }, [dispatch]);
-
-  const handlePrev = () => {
-    dispatch(prevSlide());
-  };
-
-  const handleNext = () => {
-    dispatch(nextSlide(totalSlides - 1));
-  };
-
   return (
     <section className="py-8 px-6 md:px-35" id="popular-cars" aria-label="Popular Electric Cars in UAE">
       <div className="">

@@ -1,18 +1,9 @@
+import { ReviewsI } from '@/app/types/cars'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-const DiscoverCarCard = ({review}: {review: {
-  link: string;
-  image: string;
-  title: string;
-  rating: number;
-  date: string;
-  readingTime: string;
-  brand: string;
-  model: string;
-  year: string;
-}}) => {
+const DiscoverCarCard = ({review}: {review: ReviewsI}) => {
   return (
     <Link
     href={review.link}

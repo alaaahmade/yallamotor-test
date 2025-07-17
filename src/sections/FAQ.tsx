@@ -1,18 +1,21 @@
-'use client'
-import React, { useEffect } from 'react';
-import { useAppSelector, useAppDispatch } from '../store/hooks';
-import { toggleOpenIndex, fetchFaqs } from '../store/slices/faqSlice';
+import React from 'react';
 import FAQSkeleton from '../components/skeletons/FAQSkeleton';
 
-function AccordionItem({ question, answer, index }: { question: string; answer: string; index: number }) {
-  const dispatch = useAppDispatch();
-  const openIndex = useAppSelector(state => state.faq.openIndex);
+interface AccordionItemProps {
+  question: string;
+  answer: string;
+  index: number;
+  openIndex: number;
+  onToggleOpenIndex: (index: number) => void;
+}
+
+function AccordionItem({ question, answer, index, openIndex, onToggleOpenIndex }: AccordionItemProps) {
   const open = openIndex === index;
   return (
     <div className="rounded-lg overflow-hidden">
       <button
         className={`w-full text-left bg-gray-100 px-6 py-4 cursor-pointer text-base font-semibold transition flex justify-between items-center ${open ? 'bg-blue-50' : ''}`}
-        onClick={() => dispatch(toggleOpenIndex(index))}
+        onClick={() => onToggleOpenIndex(index)}
         aria-expanded={open}
         aria-controls={`faq-answer-${index}`}
       >
@@ -37,14 +40,15 @@ function AccordionItem({ question, answer, index }: { question: string; answer: 
   );
 }
 
-export default function FAQSection() {
-  const dispatch = useAppDispatch();
-  const { faqs, loading, error } = useAppSelector(state => state.faq);
+interface FAQSectionProps {
+  faqs: { q: string; a: string }[];
+  loading: boolean;
+  error: string | null;
+  openIndex: number;
+  onToggleOpenIndex: (index: number) => void;
+}
 
-  useEffect(() => {
-    dispatch(fetchFaqs());
-  }, [dispatch]);
-
+export default function FAQSection({ faqs, loading, error, openIndex, onToggleOpenIndex }: FAQSectionProps) {
   return (
     <section className="bg-white px-6 md:px-35 py-10">
       <div className="mx-auto">
@@ -72,7 +76,7 @@ export default function FAQSection() {
         {!loading && !error && (
           <div className="space-y-4">
             {faqs.map((faq, i) => (
-              <AccordionItem key={i} question={faq.q} answer={faq.a} index={i} />
+              <AccordionItem key={i} question={faq.q} answer={faq.a} index={i} openIndex={openIndex} onToggleOpenIndex={onToggleOpenIndex} />
             ))}
           </div>
         )}

@@ -1,32 +1,16 @@
-'use client'
-import React, { useEffect } from 'react';
+import React from 'react';
 import Image from 'next/image';
-import { useAppSelector, useAppDispatch } from '@/store/hooks';
-import { fetchVideos } from '@/store/videoSlice';
+import PopularVideosSkeleton from '@/components/skeletons/PopularVideosSkeleton';
+import { VideosI } from '@/app/types/cars';
 
-function PopularVideosSkeleton() {
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-      {[1, 2, 3].map((i) => (
-        <div key={i} className="block rounded-lg overflow-hidden bg-white shadow border border-gray-100 animate-pulse">
-          <div className="relative w-full h-56 bg-gray-200" />
-          <div className="h-4 bg-gray-200 rounded mt-4 mx-4 w-1/3" />
-          <div className="h-5 bg-gray-200 rounded mt-2 mx-4 w-2/3" />
-          <div className="h-4 bg-gray-200 rounded mt-3 mb-4 mx-4 w-1/2" />
-        </div>
-      ))}
-    </div>
-  );
+
+interface PopularVideosSectionProps {
+  videos: VideosI[];
+  loading: boolean;
+  error: string | null;
 }
 
-export default function PopularVideosSection() {
-  const dispatch = useAppDispatch();
-  const { videos, loading, error } = useAppSelector((state) => state.videos);
-
-  useEffect(() => {
-    dispatch(fetchVideos());
-  }, [dispatch]);
-
+export default function PopularVideosSection({ videos, loading, error }: PopularVideosSectionProps) {
   return (
     <section className="bg-white py-10">
       <div className="py-8 mx-auto px-6 md:px-35">

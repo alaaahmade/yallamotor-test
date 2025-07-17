@@ -1,19 +1,19 @@
-'use client'
 import BrandCard from '@/components/cards/BrandCard';
 import SearchBar from '@/components/SearchBar';
-import { useAppSelector, useAppDispatch } from '../store/hooks';
-import { fetchBrands, toggleShowAll } from '../store/slices/brandGridSlice';
 import { BrandStructuredData } from '@/components/StructuredData';
-import React, { useEffect } from 'react';
+import React from 'react';
 import BrandGridSkeleton from '../components/skeletons/BrandGridSkeleton';
+import { BrandsI } from '@/app/types/cars';
 
-export default function BrandGrid() {
-  const dispatch = useAppDispatch();
-  const { brands, loading, error, showAll } = useAppSelector(state => state.brandGrid);
+interface BrandGridProps {
+  brands: BrandsI[];
+  loading: boolean;
+  error: string | null;
+  showAll: boolean;
+  onToggleShowAll: () => void;
+}
 
-  useEffect(() => {
-    dispatch(fetchBrands());
-  }, [dispatch]);
+export default function BrandGrid({ brands, loading, error, showAll, onToggleShowAll }: BrandGridProps) {
 
   return (
     <section className="py-12" id="car-brands" aria-label="Popular Car Brands">
@@ -41,7 +41,7 @@ export default function BrandGrid() {
             </div>
             <div className="flex justify-center mt-0 ">
               <button
-                onClick={() => dispatch(toggleShowAll())}
+                onClick={onToggleShowAll}
                 className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors"
               >
                 {showAll ? 'Show Less' : 'Show More'}
