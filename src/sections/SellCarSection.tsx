@@ -49,7 +49,7 @@ export default function SellCarSection() {
             </svg>
             <a
               href="https://uae.yallamotor.com/used-cars/sell-my-car"
-              className="bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-3 rounded-lg shadow-md transition-colors text-base md:text-lg border-none"
+              className="bg-green-700 hover:bg-green-800 text-white font-semibold px-8 py-3 rounded-lg shadow-md transition-colors text-base md:text-lg border-none"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Sell your car for free on YallaMotor"

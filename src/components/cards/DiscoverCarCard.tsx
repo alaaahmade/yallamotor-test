@@ -19,7 +19,7 @@ const DiscoverCarCard = ({review}: {review: ReviewsI}) => {
     </div>
     <div className="p-4">
       <div className="flex items-center justify-between mb-2">
-        <span className="text-sm text-green-500">Expert Car Ratings</span>
+        <span className="text-sm text-green-700">Expert Car Ratings</span>
         <div className="flex items-center">
           {[...Array(5)].map((_, i) => (
             <svg
