@@ -1,0 +1,63 @@
+import React from 'react'
+import CarCard from '../cards/CarCard'
+
+interface SlideProps {
+  handlePrev: () => void;
+  handleNext: () => void;
+  currentSlide: number;
+  totalSlides: number;
+  slidesPerGroup: number;
+  PopularCarsDATA: any[];
+}
+
+const Slider = ({handlePrev, handleNext, currentSlide, totalSlides, slidesPerGroup, PopularCarsDATA}: SlideProps) => {
+  return (
+        <div className="relative w-full shadow-gray-200 shadow-lg">
+          <button
+            onClick={handlePrev}
+            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white p-4 rounded-full shadow-lg hover:bg-gray-100 transition-all duration-200 z-100 cursor-pointer"
+            disabled={currentSlide === 0}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          <div className="relative overflow-hidden">
+            <div
+              className="flex transition-transform duration-500 ease-in-out w-full"
+              style={{ transform: `translateX(-${currentSlide * 50}%)` }}
+            >
+              {[...Array(totalSlides)].map((_, groupIndex) => (
+                <div key={groupIndex} className="flex-shrink-0 w-[80%]">
+                  <div className="grid grid-cols-4 gap-2">
+                    {PopularCarsDATA
+                      .slice(groupIndex * slidesPerGroup, (groupIndex + 1) * slidesPerGroup)
+                      .map((car, i) => (
+                        <div className="flex flex-col gap-4">
+                          <CarCard car={car} key={car.title} />
+                          {PopularCarsDATA[groupIndex * slidesPerGroup + i + 4] && (
+                            <CarCard car={PopularCarsDATA[groupIndex * slidesPerGroup + i + 4]} key={PopularCarsDATA[groupIndex * slidesPerGroup + i + 4].title} />
+                          )}
+                        </div>
+                      ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <button
+            onClick={handleNext}
+            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white p-4 rounded-full shadow-lg hover:bg-gray-100 transition-all duration-200 cursor-pointer"
+            disabled={currentSlide === totalSlides - 1}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+  )
+}
+
+export default Slider
