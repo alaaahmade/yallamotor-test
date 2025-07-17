@@ -1,7 +1,6 @@
 'use client'
 import React, { useEffect } from 'react';
 import Image from 'next/image';
-import VideoCard from '@/components/cards/VideoCard';
 import { useAppSelector, useAppDispatch } from '@/store/hooks';
 import { fetchVideos } from '@/store/videoSlice';
 

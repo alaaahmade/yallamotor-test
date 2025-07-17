@@ -1,7 +1,6 @@
 import DiscoverCarCard from '@/components/cards/DiscoverCarCard';
 import { reviewsCars } from '@/mock/cars';
-import Image from "next/image";
-import Link from "next/link";
+
 
 export default function CarReviews() {
   

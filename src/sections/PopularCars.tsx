@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect } from 'react';
 import { useAppSelector, useAppDispatch } from '../store/hooks';
-import { setCurrentSlide, nextSlide, prevSlide, fetchPopularCars } from '../store/slices/popularCarsSlice';
+import { nextSlide, prevSlide, fetchPopularCars } from '../store/slices/popularCarsSlice';
 import CarStructuredData from '@/components/CarStructuredData';
 import Slider from '@/components/slider/Slider';
 import PopularCarsSkeleton from '../components/skeletons/PopularCarsSkeleton';
