@@ -5,7 +5,7 @@ import { Icon } from '@iconify/react';
 export default function CarCard({ car }: { car: any }) {
   return (
     <div
-      className="w-full max-w-[206px] h-[257px] bg-white shadow-lg border-1 border-gray-200 text-sm inline-block overflow-hidden rounded-sm"
+      className="w-full md:max-w-[206px] md:w-[206px] h-[257px] bg-white shadow-lg border-1 border-gray-200 text-sm inline-block overflow-hidden rounded-sm"
       data-car-brand={car.brand}
       data-car-model={car.model}
       data-car-year={car.year}

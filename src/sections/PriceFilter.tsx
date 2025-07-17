@@ -48,8 +48,8 @@ export default function PriceFilter() {
   };
 
   return (
-    <section className="bg-gray-100 py-6">
-      <div className=" mx-auto px-20">
+    <section className="bg-gray-100 py-8 px-6 md:px-20">
+      <div className="mx-auto px-4 md:px-20 flex flex-col items-center md:items-start justify-center md:justify-start">
         <h1 className="text-2xl font-semibold mb-6">Electric Cars By Budget in UAE</h1>
         <div className="flex flex-wrap gap-0 mb-6">
           {priceRanges.map((range) => (
@@ -66,7 +66,7 @@ export default function PriceFilter() {
             </button>
           ))}
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2 w-full">
           {filterCars(priceRanges.find(r => r.key === selectedRange)!).map((car) => (
             <CarCard key={car.title} car={car} />
           ))}

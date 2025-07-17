@@ -9,7 +9,7 @@ import PopularCarsSkeleton from '../components/skeletons/PopularCarsSkeleton';
 export default function PopularCars() {
   const dispatch = useAppDispatch();
   const { cars, loading, error, currentSlide } = useAppSelector(state => state.popularCars);
-  const slidesPerGroup = 4;
+  const slidesPerGroup = 5;
   const totalSlides = Math.ceil(cars.length / slidesPerGroup);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ export default function PopularCars() {
   };
 
   return (
-    <section className="py-8 px-24" id="popular-cars" aria-label="Popular Electric Cars in UAE">
+    <section className="py-8 px-6 md:px-35" id="popular-cars" aria-label="Popular Electric Cars in UAE">
       <div className="">
         <h2 className="text-lg font-semibold mb-4">Popular Electric Cars in UAE</h2>
         <p className="text-gray-600 mb-6">

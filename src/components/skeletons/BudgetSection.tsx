@@ -9,7 +9,7 @@ export default function BudgetSection() {
           <h2 className="font-bold text-2xl">Electric Cars By Budget in UAE</h2>
         </div>
         
-        <div className="flex flex-wrap justify-start gap-0 pl-4 pr-10">
+        <div className="flex flex-wrap justify-center md:justify-start items-center gap-0 pl-0 md:pl-4 pr-0 md:pr-10">
           {Links.length > 0 ? Links.map((link, index) => (
             <Link 
               key={index}

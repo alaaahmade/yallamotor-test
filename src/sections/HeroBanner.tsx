@@ -10,7 +10,7 @@ export default function HeroBanner() {
       <div className="w-full flex justify-center">
         <div className="w-full">
           <div
-            className="w-full rounded-2xl overflow-hidden min-h-[320px] md:min-h-[400px] bg-[url('/assets/banner.png')] bg-cover bg-center cursor-pointer"
+            className="w-full rounded-2xl overflow-hidden min-h-[320px] md:min-h-[400px] bg-[url('/assets/banner.png')] bg-cover bg-left md:bg-center cursor-pointer"
             style={{ minHeight: '320px' }}
             onClick={() => {
               router.push('https://uae.yallamotor.com/used-cars/search')

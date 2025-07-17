@@ -46,8 +46,8 @@ export default function FAQSection() {
   }, [dispatch]);
 
   return (
-    <section className="bg-white py-10">
-      <div className="mx-auto px-20">
+    <section className="bg-white px-6 md:px-35 py-10">
+      <div className="mx-auto">
         <h1 className="text-2xl md:text-3xl font-bold mb-6">Electric Car FAQs</h1>
 
         <p className="text-gray-700 mb-8 leading-relaxed text-sm md:text-base">

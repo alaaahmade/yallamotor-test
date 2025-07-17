@@ -7,6 +7,8 @@ import FAQ from "../sections/FAQ";
 import BudgetSection from '@/components/skeletons/BudgetSection';
 import CarReviews from '@/sections/CarReviews';
 import SEO from '@/components/SEO';
+import SellCarSection from '@/sections/SellCarSection';
+import PopularVideosSection from '@/sections/PopularVideosSection';
 
 export default function Home() {
   return (
@@ -24,7 +26,9 @@ export default function Home() {
           <PopularCars />
           <PriceFilter />
           <BudgetSection/>
+          <SellCarSection/>
           <CarReviews />
+          <PopularVideosSection/>
           <FAQ />
         </main>
       </div>

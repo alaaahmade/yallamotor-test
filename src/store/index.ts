@@ -4,6 +4,7 @@ import brandGridReducer from './slices/brandGridSlice';
 import popularCarsReducer from './slices/popularCarsSlice';
 import faqReducer from './slices/faqSlice';
 import headerReducer from './slices/headerSlice';
+import videoReducer from '../store/videoSlice';
 
 const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ const store = configureStore({
     popularCars: popularCarsReducer,
     faq: faqReducer,
     header: headerReducer,
+    videos: videoReducer,
   },
 });
 
