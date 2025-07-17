@@ -18,6 +18,7 @@ function AccordionItem({ question, answer, index, openIndex, onToggleOpenIndex }
         onClick={() => onToggleOpenIndex(index)}
         aria-expanded={open}
         aria-controls={`faq-answer-${index}`}
+        aria-label={`Toggle FAQ: ${question}`}
       >
         <span>{question}</span>
         <svg className={`ml-2 h-5 w-5 transform transition-transform duration-300 ${open ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">

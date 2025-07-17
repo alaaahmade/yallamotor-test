@@ -62,22 +62,26 @@ const guides: Guide[] = [
 
 export const dynamic = "force-dynamic";
 
+const safeJson = async (res: Response) => {
+  try { return await res.json(); } catch { return null; }
+};
+
 export default async function Home() {
-  
-  // SSR data fetching using API routes
+  // SSR data fetching using API routes with ISR and error handling
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://yallamotor-test.vercel.app';
   const [carsRes, brandsRes, faqsRes, videosRes, reviewsRes] = await Promise.all([
-    fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'https://yallamotor-test.vercel.app'}/api/popular-cars`, { cache: 'no-store' }),
-    fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'https://yallamotor-test.vercel.app'}/api/brands`, { cache: 'no-store' }),
-    fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'https://yallamotor-test.vercel.app'}/api/faqs`, { cache: 'no-store' }),
-    fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'https://yallamotor-test.vercel.app'}/api/videos`, { cache: 'no-store' }),
-    fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'https://yallamotor-test.vercel.app'}/api/car-reviews`, { cache: 'no-store' }),
+    fetch(`${baseUrl}/api/popular-cars`, { next: { revalidate: 60 } }),
+    fetch(`${baseUrl}/api/brands`, { next: { revalidate: 60 } }),
+    fetch(`${baseUrl}/api/faqs`, { next: { revalidate: 60 } }),
+    fetch(`${baseUrl}/api/videos`, { next: { revalidate: 60 } }),
+    fetch(`${baseUrl}/api/car-reviews`, { next: { revalidate: 60 } }),
   ]);
   const [cars, brands, faqs, videos, reviews] = await Promise.all([
-    carsRes.json(),
-    brandsRes.json(),
-    faqsRes.json(),
-    videosRes.json(),
-    reviewsRes.json(),
+    safeJson(carsRes),
+    safeJson(brandsRes),
+    safeJson(faqsRes),
+    safeJson(videosRes),
+    safeJson(reviewsRes),
   ]);
 
   return (

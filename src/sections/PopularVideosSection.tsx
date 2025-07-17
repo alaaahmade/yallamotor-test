@@ -24,7 +24,7 @@ export default function PopularVideosSection({ videos, loading, error }: Popular
         <div className="flex items-center gap-2 mb-6">
           <span className="text-base">Subscribe Now:</span>
           <a href="https://www.youtube.com/@YallaMotor?sub_confirmation=1" target="_blank" rel="noopener noreferrer">
-            <button className="flex items-center bg-red-600 hover:bg-red-700 text-white font-semibold rounded px-3 py-1 text-sm shadow">
+            <button className="flex items-center bg-red-600 hover:bg-red-700 text-white font-semibold rounded px-3 py-1 text-sm shadow" aria-label="Subscribe to YallaMotor YouTube channel">
               <span className="mr-2">+499</span>
               <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" className="text-white mr-1"><path d="M21.8 8.001c-.2-.8-.8-1.5-1.6-1.7C18.2 6 12 6 12 6s-6.2 0-8.2.3c-.8.2-1.4.9-1.6 1.7C2 10.1 2 12 2 12s0 1.9.2 3.999c.2.8.8 1.5 1.6 1.7C5.8 18 12 18 12 18s6.2 0 8.2-.3c.8-.2 1.4-.9 1.6-1.7.2-2.1.2-3.999.2-3.999s0-1.9-.2-3.999zM10 15V9l6 3-6 3z"></path></svg>
               YouTube

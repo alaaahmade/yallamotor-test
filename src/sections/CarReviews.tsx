@@ -13,7 +13,7 @@ export default function CarReviews({ reviews }: CarReviewsProps) {
       <div className="mx-auto">
         <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-4 gap-4 py-2">
           <h2 className="text-2xl font-bold mb-4 md:mb-8 py-2">Discover How Each Car Scores in Expert Evaluations</h2>
-          <button className="self-start md:self-auto text-blue-500 border border-blue-500 hover:text-blue-600 hover:border-blue-600 font-bold py-1 px-4 rounded">View All</button>
+          <button className="self-start md:self-auto text-blue-500 border border-blue-500 hover:text-blue-600 hover:border-blue-600 font-bold py-1 px-4 rounded" aria-label="View all car reviews">View All</button>
         </div>
         {reviews.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1">

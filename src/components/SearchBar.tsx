@@ -52,11 +52,12 @@ export default function SearchBar() {
           <div className="relative">
             <button
               type="button"
+              aria-label="Toggle price range filter"
               className="h-12 px-4 border-2 border-gray-200 rounded-lg bg-white flex items-center gap-2"
               onClick={() => dispatch(setShowPrice(!showPrice))}
             >
               Price Range
-              <span className="ml-2">&#9660;</span>
+              <span className="ml-2" aria-hidden="true">&#9660;</span>
             </button>
             {showPrice && (
               <div ref={popupRef} className="absolute z-10 mt-2 bg-white border rounded-lg shadow-lg p-4 w-[370px]">
@@ -122,7 +123,7 @@ export default function SearchBar() {
                 <div className="flex justify-end gap-4 mt-4">
                   <button
                     type="button"
-                    className="text-gray-500 border px-4 py-2 rounded bg-white hover:bg-gray-50 cursor-pointer"
+                    className="text-gray-900 border px-4 py-2 rounded bg-white hover:bg-gray-50 cursor-pointer"
                     onClick={handleReset}
                   >
                     Reset
@@ -139,8 +140,8 @@ export default function SearchBar() {
             )}
           </div>
 
-          <button className="h-12 px-6 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg flex items-center gap-2 cursor-pointer">
-            <Search className="w-4 h-4" />
+          <button className="h-12 px-6 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg flex items-center gap-2 cursor-pointer" aria-label="Search cars">
+            <Search className="w-4 h-4" aria-hidden="true" />
             Search
           </button>
         </form>

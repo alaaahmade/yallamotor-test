@@ -16,6 +16,7 @@ const Slider = ({handlePrev, handleNext, currentSlide, totalSlides, slidesPerGro
   return (
         <div className="relative w-full shadow-gray-200 shadow-lg">
           <button
+            aria-label="Previous slide"
             onClick={handlePrev}
             className="absolute left-4 top-1/2 -translate-y-1/2 bg-white p-4 rounded-full shadow-lg hover:bg-gray-100 transition-all duration-200 z-100 cursor-pointer"
             disabled={currentSlide === 0}
@@ -65,6 +66,7 @@ const Slider = ({handlePrev, handleNext, currentSlide, totalSlides, slidesPerGro
           </div>
 
           <button
+            aria-label="Next slide"
             onClick={handleNext}
             className="absolute right-4 top-1/2 -translate-y-1/2 bg-white p-4 rounded-full shadow-lg hover:bg-gray-100 transition-all duration-200 cursor-pointer"
             disabled={currentSlide === totalSlides - 1}

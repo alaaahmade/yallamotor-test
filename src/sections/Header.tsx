@@ -19,6 +19,7 @@ export default function Header() {
 
           {/* Mobile menu button */}
           <button 
+            aria-label="Open navigation menu"
             onClick={() => dispatch(toggleMobileMenu())}
             className="lg:hidden p-2 rounded-md hover:bg-gray-100"
           >
@@ -64,7 +65,7 @@ export default function Header() {
 
           {/* Right side actions */}
           <div className="flex items-center gap-4">
-            <button className="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded-lg">
+            <button className="bg-green-700 hover:bg-green-800 text-white font-semibold px-4 py-2 rounded-lg" aria-label="Sell My Car">
               Sell My Car
             </button>
 
@@ -87,6 +88,7 @@ export default function Header() {
           <div className="flex justify-between items-center mb-6">
             <span className="text-xl font-bold text-gray-900">Menu</span>
             <button 
+              aria-label="Close navigation menu"
               onClick={() => dispatch(setMobileMenuOpen(false))}
               className="p-2 rounded-md hover:bg-gray-100"
             >

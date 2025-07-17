@@ -61,6 +61,7 @@ export default function PriceFilter() {
                 ?  ' text-blue-600 border-b-2  border-blue-600 hover:bg-gray-50'
                 : ' text-gray-600 border-b-2 border-gray-300 hover:bg-gray-50'
               }`}
+              aria-label={`Select price range: ${range.label}`}
             >
               {range.label}
             </button>
