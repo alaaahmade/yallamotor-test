@@ -5,10 +5,11 @@ import type { Metadata } from "next"
 
 async function getCar(carId: string): Promise<CarI | null> {
   try {
-
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'}/api/cars/${carId}`, {
+    
+    const res = await fetch(`http://localhost:3000/api/cars/${carId}`, {
       cache: 'no-store',
     });
+    
     if (!res.ok) return null;
     const data = await res.json();
     return {
@@ -57,7 +58,7 @@ export default async function CarPage({ params }: { params: Promise<{ carId: str
   const resolvedParams = await params;
   
   const car = await getCar(resolvedParams.carId);
-
+  
   if (!car) {
     return (
       <div className="max-w-3xl mx-auto p-8">
