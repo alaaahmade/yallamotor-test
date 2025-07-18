@@ -663,7 +663,7 @@ export const PopularCarsDATA = [
 
 export const CARS = [
   {
-    id: 1,
+    id: 15,
     brand: "Peugeot",
     model: "208",
     year: "2025",
@@ -717,7 +717,7 @@ export const CARS = [
     ],
   },
   {
-    id: 2,
+    id: 16,
     brand: "Peugeot",
     model: "2008",
     year: "2025",
@@ -770,7 +770,7 @@ export const CARS = [
     date: "2023-01-01",
   },
   {
-    id: 3,
+    id: 17,
     brand: "Peugeot",
     model: "208",
     year: "2025",
@@ -823,7 +823,7 @@ export const CARS = [
     date: "2023-01-01"
   },
   {
-    id: 4,
+    id: 18,
     brand: "Peugeot",
     model: "2008",
     year: "2025",
@@ -876,7 +876,7 @@ export const CARS = [
     date: "2023-01-01"
   },
   {
-    id: 5,
+    id: 19,
     brand: "Polestar",
     model: "2",
     year: "2025",
@@ -929,7 +929,7 @@ export const CARS = [
     date: "2023-01-01"
   },
   {
-    id: 6,
+    id: 20,
     brand: "Al Damani",
     model: "DMV 300",
     year: "2025",
@@ -982,7 +982,7 @@ export const CARS = [
     date: "2023-01-01"
   },
   {
-    id: 7,
+    id: 21,
     brand: "Hongqi",
     model: "E-QM5",
     year: "2025",
@@ -1035,7 +1035,7 @@ export const CARS = [
     date: "2023-01-01"
   },
   {
-    id: 8,
+    id: 22,
     brand: "Hyundai",
     model: "Ioniq 5",
     year: "2025",
@@ -1088,7 +1088,7 @@ export const CARS = [
     date: "2023-01-01"
   },
   {
-    id: 9,
+    id: 23,
     brand: "Tesla",
     model: "Model 3",
     year: "2025",
@@ -1141,7 +1141,7 @@ export const CARS = [
     date: "2023-01-01"
   },
   {
-    id: 10,
+    id: 24,
     brand: "Skywell",
     model: "ET5",
     year: "2025",
@@ -1194,7 +1194,7 @@ export const CARS = [
     date: "2023-01-01"
   },
   {
-    id: 11,
+    id: 25,
     brand: "Tesla",
     model: "Model Y",
     year: "2025",
@@ -1247,7 +1247,7 @@ export const CARS = [
     date: "2023-01-01"
   },
   {
-    id: 12,
+    id: 26,
     brand: "Bentley",
     model: "EXP 100 GT",
     year: "2025",
