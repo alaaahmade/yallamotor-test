@@ -65,7 +65,7 @@ export default function Header() {
 
           {/* Right side actions */}
           <div className="flex items-center gap-4">
-            <button className="bg-green-700 text-sm hover:bg-green-800 text-white font-semibold px-4 py-2 rounded-lg" aria-label="Sell My Car">
+            <button className="bg-green-700 text-xs md:text-sm hover:bg-green-800 text-white font-semibold px-4 py-2 rounded-lg" aria-label="Sell My Car">
               Sell My Car
             </button>
 
