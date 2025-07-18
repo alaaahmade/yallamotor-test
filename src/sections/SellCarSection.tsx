@@ -27,7 +27,7 @@ export default function SellCarSection() {
               height={300}
             />
             {/* SELL flag */}
-            <div className="absolute -top-6 left-8 md:left-12 bg-blue-500 text-white font-bold px-4 py-2 rounded-md rotate-[-24deg] shadow-md text-sm md:text-base">
+            <div className="absolute -top-6 left-8 md:left-12 bg-blue-700 text-white font-bold px-4 py-2 rounded-md rotate-[-24deg] shadow-md text-sm md:text-base">
               SELL
             </div>
           </div>
